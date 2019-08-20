@@ -1,0 +1,75 @@
+# Python-cookbook
+def hex2int(x):
+    y=0
+    mylist=[]
+    mylist2=[]
+    finallist=[]
+    for w in x:
+       if w>'F' and w>'f':
+           return 'There is an error'
+       else:
+            if w=='a' or w=='A':
+                w=10
+            elif w=='b' or w=='B':
+              w=11
+            elif w=='c' or w=='C':
+              w=12
+            elif w=='d' or w=='D':
+              w=13
+            elif w=='e' or w=='E':
+              w=14
+            elif w=='f' or w=='F':
+              w=15  
+            elif w>='0' and w<='9':
+              w=int(w)
+            mylist.append(w)
+    #return mylist
+    for z in range(len(x)):
+       y=16**(len(x)-(z+1))
+       mylist2.append(y)
+    #return mylist2
+    finallist=[mylist*mylist2 for mylist,mylist2 in zip(mylist,mylist2)] 
+    return sum(finallist)
+
+def inttohex(z):
+    mylist3=[]
+    mylist4=[]
+    n=z%16
+    mylist3.append(int(n))
+    m=z/16
+    n=m%16
+    mylist3.append(int(n))
+    while m>16:
+        m=m/16
+        n=m%16
+        mylist3.append(int(n))
+    mylist3.reverse()
+    for o in mylist3:
+        if max(mylist3)>16:
+          print ('there is an error')
+        elif o<10:
+            mylist4.append(o)
+        elif o==10:
+            mylist4.append('A')
+        elif o==11:
+            mylist4.append('B')
+        elif o==12:
+            mylist4.append('C')
+        elif o==13:
+            mylist4.append('D')
+        elif o==14:
+            mylist4.append('E')
+        elif o==15:
+            mylist4.append('F')
+    return(mylist4)
+           
+
+def main():
+    x=str(input('please type a word,letter or number: '))
+    print(hex2int(x))
+main()
+
+def main():
+    z=int(input('please type number: '))
+    print(inttohex(z))
+main()
