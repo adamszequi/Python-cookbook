@@ -1,0 +1,17 @@
+def reducefractionstolowestterms(x,y):
+    m=min(x,y)
+    mylist=[]
+    for w in range(0,m+1):
+       if w>0 and w>1 and x%w==0 and y%w==0:
+          mylist.append(w)
+          z=max(mylist)
+          print(mylist)
+          return x/z,y/z
+    return x,y
+     
+
+def main():
+     x=int(input('Type numerator: '))
+     y=int(input('Type denominator: '))
+     print(reducefractionstolowestterms(x,y))
+main()
