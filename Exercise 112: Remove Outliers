@@ -1,0 +1,30 @@
+# Python-cookbook
+ def outliers(x,y):
+    maxi=[]
+    mini=[]
+    max1=max(x)
+    maxi.append(max1)
+    x.remove(max1)
+    while len(maxi)<=y-1:
+        max1=max(x)
+        maxi.append(max1)
+        x.remove(max1)
+    while len(mini)<=y-1:
+        min1=min(x)
+        mini.append(min1)
+        x.remove(min1)
+    return x
+
+def main():
+    x=[]
+    y=int(input('type parameter: '))
+    m=int(input('type number: '))
+    x.append(m)
+    while m!=0:
+        m=int(input('type another number: '))
+        x.append(m)
+    if len(x)<=4:     
+        print('YOU HAVE TYPED LESS THAN 4 NUMBERS: ')
+    else:
+        print (outliers(x,y))
+main()
