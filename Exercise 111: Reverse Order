@@ -1,0 +1,11 @@
+# Python-cookbook
+mylist=[]
+x=int(input('type integer '))
+mylist.append(x)
+while x!=0:
+    x=int(input('type integer '))
+    if x>0:
+       mylist.append(x)
+mylist.reverse()       
+for w in mylist:
+   print(mylist)
