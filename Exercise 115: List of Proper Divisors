@@ -1,0 +1,12 @@
+# Python-cookbook
+def divisor(n):
+    listy=[]
+    for i in range(1,n):
+        if n%i==0:
+          listy.append(i)
+    return listy
+
+def main():
+    n=int(input('type integer: '))
+    print (divisor(n))
+main()
