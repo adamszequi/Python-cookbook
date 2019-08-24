@@ -1,0 +1,10 @@
+import string
+n=input('type sentence: ')
+mylist=[]
+mylist2=[]
+indices=n.translate(str.maketrans('', '', string.punctuation))
+mylist.append(indices)
+strippedn=indices.split()
+for w in strippedn:
+    mylist2.append(w)
+print(mylist2)
