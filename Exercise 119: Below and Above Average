@@ -1,0 +1,19 @@
+import statistics
+values = []
+belowavg=[]
+aboveavg=[]
+s = input("Enter a value (blank line to quit): ")
+while s != "":
+    num = float(s)
+    values.append(num)
+    s = input("Enter a value (blank line to quit): ")
+avg=statistics.mean(values)
+print('Average is',avg)
+#print(values)
+for i in values:
+    if i<avg:
+        belowavg.append(i)
+    elif i>avg:
+        aboveavg.append(i)
+print('Above average values are',aboveavg)
+print('Below average values are',belowavg)
