@@ -1,0 +1,12 @@
+import random
+
+lottery=[]
+
+number=random.randrange(1,50)
+lottery.append(number)
+while len(lottery)<6:
+    number=random.randrange(1,50)
+    lottery.append(number)
+    if lottery.count(number) >1:
+        lottery.remove(number)
+print (lottery)
