@@ -1,0 +1,21 @@
+def countrange(x,y,z):
+    mylist=[]
+    for w in sorted(x):
+        if w>y and w<z:
+            mylist.append(w)
+    return len(mylist)
+
+def main():
+    x=[]
+    y=0
+    z=0
+    m=input('type number: ')
+    x.append(int(m))
+    while m!=" ":
+         m=input('type another number: ')
+         if m!=" ":
+            x.append(int(m))
+    y=int(input('type min number: '))
+    z=int(input('type max number: '))
+    print(countrange(x,y,z))
+main()
