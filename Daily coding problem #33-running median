@@ -1,0 +1,7 @@
+import statistics
+mylist2=[]
+mylist=[2,1,5,7,2,0,5]
+for i in mylist:
+        mylist2.append(i)
+        mylist2.sort() 
+        print(statistics.median(mylist2))  
