@@ -1,0 +1,21 @@
+def phrase(phrase):
+  outsidewords=(' ')
+  phrasedic={}
+  for i in phrase:
+     if i not in outsidewords:
+        if i in phrasedic:
+            phrasedic[i]=phrasedic[i]+1
+        else:
+            phrasedic[i]=1
+  return(phrasedic)
+
+def main():
+   phrase1 = input("Enter the first string: ") 
+   phrase2 = input("Enter the second string: ")
+   counts1 = phrase(phrase1)
+   counts2 = phrase(phrase2)
+   if counts1 == counts2:
+     print("Those strings are anagrams.")
+   else:
+     print("Those strings are not anagrams.")
+main()
