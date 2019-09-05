@@ -1,0 +1,35 @@
+def wordnumbers(x):
+     mylist2=[]
+     for i in str(x):
+        mylist2.append(int(i))
+     #print(mylist2)
+     mylist=[]
+     ones={'one':1,'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9}
+     tens={'ten':10,'eleven':11,'twelve':12,'thirteen':13,'fourteen':14,'fifteen':15,'sixteen':16,\
+      'seventeen':17,'eighteen':18,'nineteen':19,'twenty':20,'thirty':30,'fourty':40,'fifty':50,\
+      'sixty':60,'seventy':70,'eighty':80,'ninety':90}
+     hundreds={'one hundred':100,'two hundred':200,'three hundred':300,'four hundred':400,\
+          'five hundred':500,'six hundred':600,'seven hundred':700,'eight hundred':800\
+          ,'nine hundred':900}
+     if len(mylist2)==2:
+         hundies=100*mylist2[0]
+         #print(hundies)
+         for k,l in hundreds.items():
+             if l==hundies:
+                 h=k
+                 print(h)
+         tennies=mylist2[1]*10
+         for k,l in tens.items():
+             if l==tennies:
+                 t=k
+                 print(t)
+         onnies=x-(hundies+tennies)
+         for k,l in ones.items():
+             if l==onnies:
+                 o=k
+                 print(o)
+
+def main():
+    x=int(input('type int: '))
+    print(wordnumbers(x))
+main()
