@@ -1,0 +1,24 @@
+mylist=[]
+mylist1=[]
+flights=[('ORD','WXY'),('SFO','HKO'),('WXY','MNO'),('YYZ','SFO'),('YUL','YYZ'),('HKO','ORD')]
+#flights=[('a','b'),('a','c'),('b','c'),('c','a')]
+#inout first flight
+y=input('enter first flight : ')
+#assign results to y
+results=y
+for i in flights:
+    #if results id the first item in group,append to mylist
+     if results == i[0]: 
+        mylist.append(i)
+        results=i[1]
+        #change results and iterate over again
+     for i in flights:
+        if results == i[0]:
+            #making output lexicographically smaller
+            if i not in mylist:
+              mylist.append(i)
+              results=i[1]
+#append all first items to mylist 2
+for x in mylist:
+    mylist1.append(x[0])
+print(mylist1)
