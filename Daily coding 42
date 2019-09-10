@@ -1,0 +1,16 @@
+import itertools
+k=int(input('type a number: '))
+s=[12,1,61,5,9,2]
+mylist=[]
+mylist2=[]
+for i in s:
+    if i<k:
+        mylist.append(i)
+    else:
+        s=mylist
+for x in range(len(mylist)+1):
+    for combs in itertools.combinations(mylist,x):
+        mylist2.append(combs)
+for i in mylist2:
+    if sum(i)==k:
+       print(i)
